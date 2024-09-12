@@ -5,10 +5,23 @@ name: 뉴스속보수집
 
 # on : 어떤 조건일 때 파일을 실행시킬지
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # 특정 시간이 될 때마다 실행하는 조건 설정
+  # cron 표현식# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: 뉴스속보수집
+
+# on : 어떤 조건일 때 파일을 실행시킬지
+on:
+  # 특정 시간이 될 때마다 실행하는 조건 설정
+  # cron 표현식
+  schedule: 
+    - cron: "10 * * * *"
+    # 매 시간 10분마다 실행 (15:10, 16:10, ...)
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 # jobs : 실행 작업 목록
 jobs:
